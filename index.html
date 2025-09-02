@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Weather App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center " href="index.html">
+          <img src="image/logo.png" alt="Logo" width="40" class="me-2" />
+          <div>
+            <h5 class="mb-0 text-white">Weather</h5>
+            <small class="text-white-50 m-0 ">tagline goes here</small>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Live cameras</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Photos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero py-5 text-center">
+      <div class="container">
+        <form class="find-location d-flex justify-content-center">
+          <input
+            type="text"
+            placeholder="Find your location..."
+            id="search"
+            class="form-control "
+          />
+          <button type="button" id="submit" class="btn btn-primary ms-2 btnsearch">
+            Find
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Forecast -->
+    <div class="forecast-container-wrapper py-5">
+      <div class="container">
+        <div class="row g-4 forecast-container">
+          <div class="col-md-4">
+            <div class="weather-card today-card p-3 bg-light rounded shadow-sm">
+              <div class="card-header d-flex justify-content-between">
+                <span id="today-date-day-name"></span>
+                <span>
+                  <span id="today-date-day-num"></span>
+                  <span id="today-date-month"></span>
+                </span>
+              </div>
+              <div class="card-body">
+                <div id="today-location" class="location fw-bold mb-2"></div>
+                <div class="degree-info d-flex align-items-center">
+                  <div class="degree-value display-5 fw-bold me-3">
+                    <span id="today-temp"></span><sup>°</sup>C
+                  </div>
+                  <div class="weather-icon">
+                    <img id="today-condition-img" src="" alt="" />
+                  </div>
+                </div>
+                <p id="today-condition-text" class="custom-text mt-2"></p>
+                <div class="item-footer d-flex justify-content-between mt-3">
+                  <div>
+                    <img src="" alt="" />
+                    <span id="humidity"></span>
+                  </div>
+                  <div>
+                    <img src="" alt="" />
+                    <span id="wind"></span>
+                  </div>
+                  <div>
+                    <img src="" alt="" />
+                    <span id="wind-direction"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Next Days -->
+          <div class="col-md-4">
+            <div class="weather-card next-card p-3 bg-light rounded shadow-sm">
+              <div class="card-header">
+                <div class="day next-day-name"></div>
+              </div>
+              <div class="card-body text-center">
+                <div class="weather-icon-small mb-2">
+                  <img src="" class="next-condition-img" alt="" />
+                </div>
+                <div class="temp-values">
+                  <h5 class="max-temp">
+                    <span class="next-max-temp"></span><sup>°</sup>C
+                  </h5>
+                  <h6 class="min-temp text-muted">
+                    <span class="next-min-temp"></span><sup>°</sup>C
+                  </h6>
+                </div>
+                <p class="next-condition-text custom-text"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="weather-card next-card p-3 bg-light rounded shadow-sm">
+              <div class="card-header">
+                <div class="day next-day-name"></div>
+              </div>
+              <div class="card-body text-center">
+                <div class="weather-icon-small mb-2">
+                  <img src="" class="next-condition-img" alt="" />
+                </div>
+                <div class="temp-values">
+                  <h5 class="max-temp">
+                    <span class="next-max-temp"></span><sup>°</sup>C
+                  </h5>
+                  <h6 class="min-temp text-muted">
+                    <span class="next-min-temp"></span><sup>°</sup>C
+                  </h6>
+                </div>
+                <p class="next-condition-text custom-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-dark text-white py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <form action="#" class="subscribe-form d-flex">
+              <input
+                type="email"
+                class="form-control me-2"
+                placeholder="Enter your email to subscribe..."
+              />
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </form>
+          </div>
+          <div class="col-md-4 text-center text-md-end">
+            <div class="social-links">
+              <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-google-plus"></i></a>
+              <a href="#" class="text-white"><i class="fab fa-pinterest"></i></a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
